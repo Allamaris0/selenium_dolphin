@@ -46,7 +46,7 @@ class DolphinAPI:
 	    except:
 	        raise RuntimeError(r.text)
 
-	def generate_fingerprint(self, platform='windows', browser_version='119', screen='1920x1080'):
+	def generate_fingerprint(self, platform='windows', browser_version='121', screen='1920x1080'):
 		r = self.s.get(f'https://dolphin-anty-api.com/fingerprints/fingerprint?platform={platform}&browser_type=anty&browser_version={browser_version}&type=fingerprint&screen={screen}')
 		try:
 			return r.json()
@@ -88,7 +88,7 @@ class DolphinAPI:
 	  }
 
 	  data['macAddress'] = {
-	    'mode': 'off', 
+	    'mode': 'random', 
 	    'value': None
 	  }
 
@@ -98,11 +98,11 @@ class DolphinAPI:
 	  }
 
 	  data['canvas'] = {
-	    'mode': 'real'
+	    'mode': 'noise'
 	  }
 
 	  data['webgl'] = {
-	    'mode': 'real'
+	    'mode': 'noise'
 	  }
 
 	  data['webglInfo'] = {
@@ -117,7 +117,7 @@ class DolphinAPI:
 	  }
 
 	  data['clientRect'] = {
-	    'mode': 'real'
+	    'mode': 'noise'
 	  }
 
 	  data['timezone'] = {
